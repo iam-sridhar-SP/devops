@@ -31,10 +31,9 @@ export AWS_ACCESS_KEY_ID=**************
 export AWS_SECRET_ACCESS_KEY=**************
 boto3 and botocore - For EC2 Dynamic Inventory and Creating EC2 Instances
 
-python
-# boto3 quick start
-> import boto3
-> client = boto3.client('ec2')
+python:
+import boto3
+client = boto3.client('ec2')
 Create EC2 Instances using Terraform
 cd terraform/backup/09-multiple-ec2-instances
 export AWS_ACCESS_KEY_ID=**************

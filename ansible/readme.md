@@ -31,52 +31,55 @@ export AWS_ACCESS_KEY_ID=**************
 export AWS_SECRET_ACCESS_KEY=**************
 boto3 and botocore - For EC2 Dynamic Inventory and Creating EC2 Instances
 
-python:
-import boto3
-client = boto3.client('ec2')
-Create EC2 Instances using Terraform
-cd terraform/backup/09-multiple-ec2-instances
-export AWS_ACCESS_KEY_ID=**************
-export AWS_SECRET_ACCESS_KEY=**************
-terraform init
-terraform apply
-ls ~/aws/aws_keys/ # Make sure that the keys file is present
+Python
+
+- import boto3
+- client = boto3.client('ec2')
+- Create EC2 Instances using Terraform
+- cd terraform/backup/09-multiple-ec2-instances
+- export AWS_ACCESS_KEY_ID=**************
+- export AWS_SECRET_ACCESS_KEY=**************
+- terraform init
+- terraform apply
+- ls /Users/sridhar/devops/ # Make sure that the keys file is present
+
 Ansible Commands
-cd /sridhar/devops/ansible 
-ansible --version
-ansible -m ping all
-ansible all -a "whoami"
-ansible all -a "uname"
-ssh -vvv -i ~/devops/default-ec2.pem ec2-user@5.8.82.105
-ls ~/devops/default-ec2.pem
-chmod 400 /Users/sridhar/devops/default-ec2.pem
-ansible all -a "uname"
-ansible all -a "uname -a"
-ansible all -a "pwd"
-ansible all -a "python --version"
-ansible dev -a "python --version"
-ansible qa -a "python --version"
-ansible first -a "python --version"
-ansible groupofgroups -a "python --version"
-ansible devsubset -a "python --version"
-ansible --list-host all
-ansible --list-host dev
-ansible --list-host first
-ansible --list-host \!first
-ansible --list-host qa:dev
-ansible-playbook playbooks/ping.yml
-ansible-playbook playbooks/shell.yml 
-ansible-playbook playbooks/variables.yml 
-ansible-playbook playbooks/variables.yml -e variable1=CommandLineValue
-ansible-playbook playbooks/ansible-facts.yml 
-ansible-playbook playbooks/install-apache.yml 
-ansible-playbook playbooks/playbooks.yml 
-ansible-playbook playbooks/playbooks.yml --list-tasks
-ansible-playbook playbooks/playbooks.yml --list-hosts
-ansible-playbook playbooks/playbooks.yml --list-tags
-ansible-playbook -l dev playbooks/ping.yml
-ansible-playbook playbooks/conditionals-and-loops.yml 
-ansible-inventory --list
-ansible-inventory --graph
-ansible-playbook playbooks/dynamic-inventory-ping.yml 
-ansible-playbook playbooks/create-ec2.yml 
+
+- cd /sridhar/devops/ansible 
+- ansible --version
+- ansible -m ping all
+- ansible all -a "whoami"
+- ansible all -a "uname"
+- ssh -vvv -i ~/devops/default-ec2.pem ec2-user@5.8.82.105
+- ls ~/devops/default-ec2.pem
+- chmod 400 /Users/sridhar/devops/default-ec2.pem
+- ansible all -a "uname"
+- ansible all -a "uname -a"
+- ansible all -a "pwd"
+- ansible all -a "python --version"
+- ansible dev -a "python --version"
+- ansible qa -a "python --version"
+- ansible first -a "python --version"
+- ansible groupofgroups -a "python --version"
+- ansible devsubset -a "python --version"
+- ansible --list-host all
+- ansible --list-host dev
+- ansible --list-host first
+- ansible --list-host \!first
+- ansible --list-host qa:dev
+- ansible-playbook playbooks/ping.yml
+- ansible-playbook playbooks/shell.yml 
+- ansible-playbook playbooks/variables.yml 
+- ansible-playbook playbooks/variables.yml -e variable1=CommandLineValue
+- ansible-playbook playbooks/ansible-facts.yml 
+- ansible-playbook playbooks/install-apache.yml 
+- ansible-playbook playbooks/playbooks.yml 
+- ansible-playbook playbooks/playbooks.yml --list-tasks
+- ansible-playbook playbooks/playbooks.yml --list-hosts
+- ansible-playbook playbooks/playbooks.yml --list-tags
+- ansible-playbook -l dev playbooks/ping.yml
+- ansible-playbook playbooks/conditionals-and-loops.yml 
+- ansible-inventory --list
+- ansible-inventory --graph
+- ansible-playbook playbooks/dynamic-inventory-ping.yml 
+- ansible-playbook playbooks/create-ec2.yml 
